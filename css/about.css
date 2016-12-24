@@ -1,0 +1,17 @@
+.resume .resume-left {
+	display: flex;
+	display: -webkit-flex; /* Safari */
+	align-items: center;
+}
+.resume .resume-left>img{
+	width: 80px;
+	height: 80px;
+	display: inline-block;
+}
+.resume-left .resume-title {
+	flex: 1;
+	margin-left: 20px;
+}
+.resume-title>span {
+	display: block;
+}
