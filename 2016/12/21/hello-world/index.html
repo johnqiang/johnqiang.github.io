@@ -3,7 +3,7 @@
         <meta charset="utf-8">
             
             <title>
-                Hello World | 清莲海棠
+                css水平垂直居中 | 清莲海棠
             </title>
             <meta content="width=device-width, initial-scale=1" name="viewport">
             <meta name="theme-color" content="#4184f3">
@@ -100,7 +100,7 @@
           <header class="post-header">
           
           </header>
-          <h1 class="post-title">Hello World</h1>
+          <h1 class="post-title">css水平垂直居中</h1>
 
           <section class="post-info">
             <span class="post-date">2016/12/21</span>
@@ -109,15 +109,32 @@
           </section>
 
           <section class="post-content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>水平垂直居中问题是页面布局中经常遇到的问题，本文总结最常用的解决方法</p>
+<ol>
+<li>绝对居中<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">.box&#123;</div><div class="line">background:#ccc;</div><div class="line">height:100px;</div><div class="line">width:200px;</div><div class="line">margin: auto;</div><div class="line">overflow:auto;  //避免溢出</div><div class="line">position: absolute;</div><div class="line">top: 0;</div><div class="line">left: 0;</div><div class="line">bottom: 0;</div><div class="line">right: 0;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>有点：<br>    • 布局块可以自由调节大小<br>    • 无需额外的dom节点<br>    • 自适应布局，可以使用百分比和最大最小高宽等样式<br>    • 居中时不考虑元素的padding值（也不需要使用box-sizing样式）<br>    • img的图像也可以使用<br>    • 跨浏览器，兼容性好（无需hack，可兼顾IE8~IE10）<br>注意：<br>    • 必须声明元素高度<br>    • 推荐设置overflow:auto;样式避免元素溢出，显示不正常的问题</p>
+<ol>
+<li><p>相对父元素水平垂直居中<br>根据绝对居中方法，只需要给父容器添加position: relative;或者position: fixed;都是可以的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">.part&#123;</div><div class="line">width:400px;</div><div class="line">height:400px;</div><div class="line">background:red;</div><div class="line">position:relative;</div><div class="line">&#125;</div><div class="line">.box1&#123;</div><div class="line">background:#ccc;</div><div class="line">height:100px;</div><div class="line">width:200px;</div><div class="line">margin: auto;</div><div class="line">position: absolute;</div><div class="line">top: 0;</div><div class="line">left: 0;</div><div class="line">bottom: 0;</div><div class="line">right: 0;</div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;part&quot;&gt;</div><div class="line">&lt;div class=&quot;box1&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>绝对定位和负边距</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">.part&#123;position:relative;&#125;</div><div class="line">.box1&#123;</div><div class="line">position: absolute;</div><div class="line">width:100px;</div><div class="line">height: 50px;</div><div class="line">top:50%;</div><div class="line">left:50%;</div><div class="line">margin-left:-50px; // 自身宽度的一半</div><div class="line">margin-top:-25px; // 自身高度的一半</div><div class="line">text-align: center;</div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;part&quot;&gt;</div><div class="line">&lt;div class=&quot;box1&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Translate （方法3变种）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.part&#123;position: relative;&#125;</div><div class="line">.box1 &#123;</div><div class="line">position: absolute;</div><div class="line">top:50%;</div><div class="line">left:50%;</div><div class="line">width:100%;</div><div class="line">transform:translate(-50%,-50%);</div><div class="line">text-align: center;</div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;part&quot;&gt;</div><div class="line">&lt;div class=&quot;box1&quot;&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>flex定位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.box1 &#123;</div><div class="line">display: flex;</div><div class="line">justify-content:center;</div><div class="line">align-items:center;</div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;box1&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Table-cell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.box1&#123;</div><div class="line">    display: table-cell;</div><div class="line">    vertical-align: middle;</div><div class="line">    text-align: center;        </div><div class="line">&#125;</div><div class="line">&lt;div class=&quot;box1&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>单行文字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box1 &#123;</div><div class="line">height: 100px;</div><div class="line">Line-height: 100px;</div><div class="line">vertical-align: middle;</div><div class="line">text-align: center; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
           </section>
         </article>

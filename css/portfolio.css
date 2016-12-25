@@ -3,7 +3,6 @@
 }
 .portfolio .portfolio-header>h3 {
 	text-align: center;
-  letter-spacing: 18px;
 }
 .portfolio-header .strip {
   display: flex;
@@ -11,11 +10,14 @@
   justify-content: center;
   align-items: center;
 }
+.portfolio-header>p {
+  padding: 0 20px;
+}
 .strip>img {
   margin: 0 20px;
 }
 .strip .line {
-  width: 100px;
+  width: 80px;
   height: 1px;
   background: #000;
   display: inline-block;
@@ -31,6 +33,7 @@
 	height: 300px;
 	position: relative;
 	margin: 2px;
+  overflow: hidden;
 }
 .portfolio-grid img {
 	width: 100%;
